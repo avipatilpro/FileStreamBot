@@ -64,6 +64,13 @@ Either you could locally host or deploy on [Heroku](https://heroku.com)
 
 ### Deploy on Heroku
 
+1. Fork This Repo
+2. In .github/workflow/action.yml 
+3. edit this file and at bottom replace the app name with your heroku app name
+4. If You nota Do this bot will not work
+
+### So Follow Above Steps 👆 and then also deply other wise not work
+
 Press the below button to Fast deploy on Heroku
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
