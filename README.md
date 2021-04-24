@@ -65,9 +65,14 @@ Either you could locally host or deploy on [Heroku](https://heroku.com)
 ### Deploy on Heroku
 
 1. Fork This Repo
-2. In .github/workflow/action.yml 
-3. edit this file and at bottom replace the app name with your heroku app name
-4. If You nota Do this bot will not work
+2. In .github/workflow/YOURACTION.yml 
+3. edit this file and at last line in file replace the app name with your heroku app name
+
+ 4.```URL: "https://avifilestreambot.herokuapp.com"```
+          
+5. change this name 😑😑😑
+
+6. If You nota Do this bot will not work
 
 ### So Follow Above Steps 👆 and then also deply other wise not work
 
