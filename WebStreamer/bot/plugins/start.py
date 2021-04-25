@@ -53,7 +53,7 @@ async def start(b, m):
                     disable_web_page_preview=True)
                 return
         await m.reply_text(
-            text=f"🙋🏻‍♀ Hey **[{m.from_user.first_name}](tg://user?id={m.from_user.id})** Bruh!!\n\n**I am Instant😋 Telegram File to Link Generator Bot.**\n\n**Send me any file & see the magic!** \n\nFor Help Just send /help to me 🙂",
+            text=f"🙋🏻‍♀ Hey **[{m.from_user.first_name}](tg://user?id={m.from_user.id})** Bruh!!\n\n**I am Instant😋 Telegram File to Link Generator Bot.**\n\n**Send me any file & see the magic!** \n\n**🔞 Pornogrphy Strictly Not Allowed** \n\nFor Help Just send /help to me 🙂",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [InlineKeyboardButton('😎 Developer', url='https://t.me/Avishkarpatil'), InlineKeyboardButton('😴 Profile', url='https://avipatilweb.me')]
