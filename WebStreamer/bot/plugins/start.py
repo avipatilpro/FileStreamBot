@@ -48,7 +48,7 @@ async def start(b, m):
             except Exception:
                 await b.send_message(
                     chat_id=m.chat.id,
-                    text="Something went Wrong. Contact my [Avishkar Patil](https://t.me/Avishkarpatil).",
+                    text="Something went Wrong. Contact me [Avishkar Patil](https://t.me/Avishkarpatil).",
                     parse_mode="markdown",
                     disable_web_page_preview=True)
                 return
@@ -85,7 +85,7 @@ async def start(b, m):
                             ],
                             [
                                 InlineKeyboardButton("🔄 Refresh / Try Again",
-                                                     url=f"https://t.me/AH_File2Link_Bot?start=AbirHasan2005_{usr_cmd}")
+                                                     url=f"https://t.me/avifilestreambot.herokuapp.com/{usr_cmd}")
                             ]
                         ]
                     ),
