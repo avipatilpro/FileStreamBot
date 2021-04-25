@@ -1,4 +1,4 @@
-# (c) @EverythingSuckz | @AbirHasan2005
+# (c) @Avishkarpatil | @EverythingSuckz | @AbirHasan2005
 
 import asyncio
 from WebStreamer.bot import StreamBot
