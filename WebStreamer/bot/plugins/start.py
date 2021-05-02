@@ -53,16 +53,15 @@ async def start(b, m):
                     disable_web_page_preview=True)
                 return
          await m.reply_text(
-              text="""
-<i>👋 Hᴇʏ, ᴛʜɪꜱ ɪꜱ ꜰɪʟᴇ ᴛᴏ ʟɪɴᴋ ɢᴇɴ ʙᴏᴛ</i>\n
-<i>Pʀᴇꜱꜱ ʜᴇʟᴘ ʙᴜᴛᴛᴏɴ ꜰᴏʀ ᴍᴏʀᴇ ɪɴꜰᴏ... /help </i>\n
-<i><u>𝗪𝗔𝗥𝗡𝗜𝗡𝗚 🚸</u></i>\n
-<b>Pʀᴏɴ ᴄᴏɴᴛᴇɴᴛꜱ ʟᴇᴀᴅꜱ ᴛᴏ ᴘᴇʀᴍᴀɴᴇɴᴛ ʙᴀɴ ʏᴏᴜ.</b>""",
-              parse_mode="html",
-              disable_web_page_preview=True,
-              reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton('😎 Developer', url='https://t.me/Avishkarpatil'),
-                                                     InlineKeyboardButton('😉 GitHub', url='https://t.me/Avishkarpatil') ],
-                                                   [ InlineKeyboardButton('Close', url='#') ] ] ) )
+            text=f"🙋🏻‍♀ Hey **[{m.from_user.first_name}](tg://user?id={m.from_user.id})** Bruh!!\n\n**I am Instant😋 Telegram File to Link Generator Bot.**\n\n**Send me any file & see the magic!** \n\n**🔞 Pornogrphy Strictly Not Allowed** \n\nFor Help Just send /help to me 🙂",
+            reply_markup=InlineKeyboardMarkup(
+                [
+                    [InlineKeyboardButton('😎 Developer', url='https://t.me/Avishkarpatil'), InlineKeyboardButton('😴 Profile', url='https://avipatilweb.me')]
+
+                ]
+            ),
+            disable_web_page_preview=True
+        )
     else:
         if Var.UPDATES_CHANNEL is not None:
             try:
