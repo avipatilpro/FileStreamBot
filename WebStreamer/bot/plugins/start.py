@@ -48,8 +48,8 @@ async def start(b, m):
             except Exception:
                 await b.send_message(
                     chat_id=m.chat.id,
-                    text="**Something went Wrong. Contact me [Avishkar Patil](https://t.me/Avishkarpatil).**",
-                    parse_mode="markdown",
+                    text="""<i>Sᴏᴍᴇᴛʜɪɴɢ ᴡʀᴏɴɢ ᴄᴏɴᴛᴀᴄᴛ ᴍʏ ᴅᴇᴠᴇʟᴏᴘᴇʀ</i> <b><a href='http://t.me/Avishkarpatil'>[ ᴄʟɪᴄᴋ ʜᴇʀᴇ ]</a></b>""",
+                    parse_mode="html",
                     disable_web_page_preview=True)
                 return
          await m.reply_text(
@@ -58,11 +58,11 @@ async def start(b, m):
 <i>Pʀᴇꜱꜱ ʜᴇʟᴘ ʙᴜᴛᴛᴏɴ ꜰᴏʀ ᴍᴏʀᴇ ɪɴꜰᴏ... /help </i>\n
 <i><u>𝗪𝗔𝗥𝗡𝗜𝗡𝗚 🚸</u></i>\n
 <b>Pʀᴏɴ ᴄᴏɴᴛᴇɴᴛꜱ ʟᴇᴀᴅꜱ ᴛᴏ ᴘᴇʀᴍᴀɴᴇɴᴛ ʙᴀɴ ʏᴏᴜ.</b>""",
-              parse_mode="HTML",
+              parse_mode="html",
               disable_web_page_preview=True,
               reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton('😎 Developer', url='https://t.me/Avishkarpatil'),
                                                      InlineKeyboardButton('😉 GitHub', url='https://t.me/Avishkarpatil') ],
-                                                   [ InlineKeyboardButton(text='Close', callback_data='') ] ] ) )
+                                                   [ InlineKeyboardButton('Close', url='#') ] ] ) )
     else:
         if Var.UPDATES_CHANNEL is not None:
             try:
