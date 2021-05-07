@@ -1,6 +1,6 @@
 {
-  "name": "Pyro-FileStreamBot",
-  "description": "A Pyrogram Telegram bot to Stream Telegram files to web.",
+  "name": "Avi-FileStreamBot",
+  "description": "A Pyrogram Telegram bot to Stream Telegram files to web. @Avishkarpatil",
   "keywords": [
       "telegram",
       "stream",
@@ -15,7 +15,7 @@
   "repository": "https://github.com/avipatilpro/FileStreamBot/",
   "success_url": "/",
   "logo": "https://telegra.ph/file/9d63060a06c6fc6def1da.png",
-  "website": "stream.wrench.gq",
+  "website": "avipatilweb.me",
   "env": {
       "ENV": {
           "description": "Set this to True if you don't want to crash the bot",
