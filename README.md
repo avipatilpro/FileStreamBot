@@ -16,47 +16,19 @@
 
 <hr>
 
-<details open="open">
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-this-bot">About this Bot</a>
-      <ul>
-        <li><a href="#original-repository">Original Repository</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#how-to-make-your-own">How to make your own</a>
-      <ul>
-        <li><a href="#deploy-on-heroku">Deploy using Heroku</a></li>
-        <li><a href="#host-it-on-vps-or-locally">Run it in a VPS / local</a></li>
-      </ul>
-    </li>
-    <li><a href="#setting-up-things">Setting up things</a></li>
-    <ul>
-      <li><a href="#mandatory-vars">Mandatory Vars</a></li>
-      <li><a href="#optional-vars">Optional Vars</a></li>
-    </ul>
-    <li><a href="#how-to-use-the-bot">How to use the bot</a></li>
-    <li><a href="#channel-support">About Channel Support</a></li>
-    <li><a href="#credits">Credits</a></li>
-  </ol>
-</details>
+
 
 ## About This Bot
 
 <p align="center">
     <a href="https://github.com/Avipatilpro/FileStreamBot">
-        <img src="https://www.flaticon.com/premium-icon/icons/svg/2626/2626281.svg" height="100" width="100" alt="Telegram Logo">
+        <img src="https://i.ibb.co/ZJzJ9Hq/link-3x.png" height="100" width="100" alt="FileStreamBot Logo">
     </a>
 </p>
 <p align='center'>
     This bot will give you stream links for Telegram files without the need of waiting till the download completes
 </p>
 
-### Original Repository
-
-The main working part was taken from [Megatron](https://github.com/eyaadh/megadlbot_oss) and thanks to [eyaadh](https://github.com/eyaadh) for his awesome project.
 
 ## How to make your own
 
