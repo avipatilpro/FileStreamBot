@@ -6,7 +6,7 @@
   <p align="center">
     A Telegram bot to stream files to web.
     <br />
-    <a href="https://telegram.dog/avifilestreambot"><strong>Demo Bot »</strong></a>
+   </strong></a>
     <br />
     <a href="https://github.com/Avipatilpro/FileStreamBot/issues">Report a Bug</a>
     |
