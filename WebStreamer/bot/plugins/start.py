@@ -1,4 +1,4 @@
-
+# © @AvishkarPatil [ Telegram ]
 
 from WebStreamer.bot import StreamBot
 from WebStreamer.vars import Var
@@ -26,7 +26,7 @@ async def start(b, m):
                 if user.status == "kicked":
                     await b.send_message(
                         chat_id=m.chat.id,
-                        text="Sorry Sir, You are Banned to use me. Contact the Developer",
+                        text="__Sorry Sir, You are Banned to use me. Contact the Developer__",
                         parse_mode="markdown",
                         disable_web_page_preview=True
                     )
@@ -34,34 +34,38 @@ async def start(b, m):
             except UserNotParticipant:
                 await b.send_message(
                     chat_id=m.chat.id,
-                    text="**Please Join My Updates Channel to use this Bot!**\n\nDue to Overload, Only Channel Subscribers can use the Bot!",
+                    text="<i>Jᴏɪɴ ᴍʏ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ ᴛᴏ ᴜꜱᴇ ᴍᴇ 🔐</i>",
                     reply_markup=InlineKeyboardMarkup(
                         [
                             [
-                                InlineKeyboardButton("🤖 Join Updates Channel", url=f"https://t.me/{Var.UPDATES_CHANNEL}")
+                                InlineKeyboardButton("Jᴏɪɴ ɴᴏᴡ 🔓", url=f"https://t.me/{Var.UPDATES_CHANNEL}")
                             ]
                         ]
                     ),
-                    parse_mode="markdown"
+                    parse_mode="HTML"
                 )
                 return
             except Exception:
                 await b.send_message(
                     chat_id=m.chat.id,
-                    text="Something went Wrong. Contact me [Avishkar Patil](https://t.me/Avishkarpatil).",
-                    parse_mode="markdown",
+                    text="<i>Sᴏᴍᴇᴛʜɪɴɢ ᴡʀᴏɴɢ ᴄᴏɴᴛᴀᴄᴛ ᴍʏ ᴅᴇᴠᴇʟᴏᴘᴇʀ</i> <b><a href='http://t.me/Avishkarpatil'>[ ᴄʟɪᴄᴋ ʜᴇʀᴇ ]</a></b>",
+                    parse_mode="HTML",
                     disable_web_page_preview=True)
                 return
         await m.reply_text(
-            text=f"🙋🏻‍♀ Hey **[{m.from_user.first_name}](tg://user?id={m.from_user.id})** Bruh!!\n\n**I am Instant😋 Telegram File to Link Generator Bot.**\n\n**Send me any file & see the magic!** \n\n**🔞 Pornogrphy Strictly Not Allowed** \n\nFor Help Just send /help to me 🙂",
-            reply_markup=InlineKeyboardMarkup(
-                [
-                    [InlineKeyboardButton('😎 Developer', url='https://t.me/Avishkarpatil'), InlineKeyboardButton('😴 Profile', url='https://avipatilweb.me')]
-          
-                ]
-            ),
-            disable_web_page_preview=True
-        )
+            text="""
+<i>👋 Hᴇʏ, ʜɪꜱ ɪꜱ ꜰɪʟᴇ ᴛᴏ ʟɪɴᴋ ɢᴇɴ ʙᴏᴛ</i>\n
+<i>Cʟɪᴄᴋ ᴏɴ /help ᴛᴏ ɢᴇᴛ ᴍᴏʀᴇ ɪɴғᴏʀᴍᴀᴛɪᴏɴ</i>\n
+<i><b>🍃 Bᴏᴛ Mᴀɪɴᴛᴀɪɴᴇᴅ Bʏ :</b>@AvishkarPatil</i>\n\n
+<i><u>𝗪𝗔𝗥𝗡𝗜𝗡𝗚 🚸</u></i>\n
+<b>🔞 Pʀᴏɴ ᴄᴏɴᴛᴇɴᴛꜱ ʟᴇᴀᴅꜱ ᴛᴏ ᴘᴇʀᴍᴀɴᴇɴᴛ ʙᴀɴ ʏᴏᴜ.</b>""",
+            parse_mode="HTML",
+            disable_web_page_preview=True,
+            reply_markup=InlineKeyboardMarkup( [ [InlineKeyboardButton('CREATOR 🍂', url='https://t.me/Avishkarpatil'), 
+                                                                                       InlineKeyboardButton('FOLLOW 🍺', url='https://Instagram.com/proavipatil') ] ]  ) )
+                                                                                       
+                                                                                       
+                                                                            
     else:
         if Var.UPDATES_CHANNEL is not None:
             try:
@@ -85,7 +89,7 @@ async def start(b, m):
                             ],
                             [
                                 InlineKeyboardButton("🔄 Refresh / Try Again",
-                                                     url=f"https://t.me/avifilestreambot.herokuapp.com/{usr_cmd}")
+                                                     url=f"https://t.me/F2LxBot.herokuapp.com/{usr_cmd}")
                             ]
                         ]
                     ),
@@ -123,11 +127,25 @@ async def start(b, m):
                                      Var.PORT,
                                      get_msg.message_id)
 
-        msg_text = "Bruh! 😁\nYour Link Generated! 🤓\n\n📂 **File Name:** `{}`\n**File Size:** `{}`\n\n📥 **Download Link:** `{}`"
+        msg_text ="""
+<i><u>𝗬𝗼𝘂𝗿 𝗟𝗶𝗻𝗸 𝗚𝗲𝗻𝗲𝗿𝗮𝘁𝗲𝗱 !</u></i>
+
+<b>📂 Fɪʟᴇ ɴᴀᴍᴇ :</b> <i>{}</i>
+
+<b>📦 Fɪʟᴇ ꜱɪᴢᴇ :</b> <i>{}</i>
+
+<b>📥 Dᴏᴡɴʟᴏᴀᴅ :</b> <i>{}</i>
+
+<b>🚸 Nᴏᴛᴇ : Lɪɴᴋ ᴇxᴘɪʀᴇᴅ ɪɴ 24 ʜᴏᴜʀꜱ</b>
+
+<i>🍃 Bᴏᴛ Mᴀɪɴᴛᴀɪɴᴇᴅ Bʏ :</i> <b>@AvishkarPatil</b>
+
+"""
+
         await m.reply_text(
             text=msg_text.format(file_name, file_size, stream_link),
-            parse_mode="Markdown",
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Download Now", url=stream_link)]])
+            parse_mode="HTML",
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Dᴏᴡɴʟᴏᴀᴅ ɴᴏᴡ 📥", url=stream_link)]])
         )
 
 
@@ -145,8 +163,8 @@ async def help_handler(bot, message):
             if user.status == "kicked":
                 await bot.send_message(
                     chat_id=message.chat.id,
-                    text="Sorry Sir, You are Banned to use me.",
-                    parse_mode="markdown",
+                    text="<i>Sorry Sir, You are Banned to use me.</i>",
+                    parse_mode="HTML",
                     disable_web_page_preview=True
                 )
                 return
@@ -167,18 +185,23 @@ async def help_handler(bot, message):
         except Exception:
             await bot.send_message(
                 chat_id=message.chat.id,
-                text="Something went Wrong. Contact me [Avishkar Patil](https://t.me/Avishkarpatil).",
+                text="__Something went Wrong. Contact me__ [Avishkar Patil](https://t.me/Avishkarpatil).",
                 parse_mode="markdown",
                 disable_web_page_preview=True)
             return
     await message.reply_text(
-        text="Send me any File I will provide External Direct Download Link!\n\nAlso I am Supported in Channels. Add me to Channel as Admin to Make Me Workable!",
-        parse_mode="Markdown",
+        text="""
+<i>Sᴇɴᴅ ᴍᴇ ᴀɴʏ ꜰɪʟᴇ (ᴏʀ) ᴍᴇᴅɪᴀ ꜰʀᴏᴍ ᴛᴇʟᴇɢʀᴀᴍ.</i>\n
+<i>I ᴡɪʟʟ ᴘʀᴏᴠɪᴅᴇ ᴇxᴛᴇʀɴᴀʟ ᴅɪʀᴇᴄᴛ ᴅᴏᴡɴʟᴏᴀᴅ ʟɪɴᴋ !.</i>\n
+<u>𝗪𝗔𝗥𝗡𝗜𝗡𝗚 🚸</u>\n
+<b>Pʀᴏɴ ᴄᴏɴᴛᴇɴᴛꜱ ʟᴇᴀᴅꜱ ᴛᴏ ᴘᴇʀᴍᴀɴᴇɴᴛ ʙᴀɴ ʏᴏᴜ.</b>\n
+<i>Cᴏɴᴛᴀᴄᴛ ᴅᴇᴠᴇʟᴏᴘᴇʀ (ᴏʀ) ʀᴇᴘᴏʀᴛ ʙᴜɢꜱ</i> <b>: <a href='https://t.me/Avishkarpatil'>[ ᴄʟɪᴄᴋ ʜᴇʀᴇ ]</a></b>""",
+        parse_mode="HTML",
         disable_web_page_preview=True,
         reply_markup=InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton("😍 GitHub", url="https://GitHub.com/avipatilpro")],
-                [InlineKeyboardButton("😎 Developer", url="https://t.me/Avishkarpatil")]
+                [InlineKeyboardButton("🏵 DEV", url="https://GitHub.com/avipatilpro")],
+                [InlineKeyboardButton("🍺 FOLLOW", url="https://Instagram.com/proavipatil")]
             ]
         )
     )
