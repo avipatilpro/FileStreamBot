@@ -40,7 +40,7 @@ Either you could locally host or deploy on [Heroku](https://heroku.com)
 2. In .github/workflow/YOURACTION.yml 
 3. edit this file and at last line in file replace the app name with your heroku app name
 
- 4.```URL: "https://avifilestreambot.herokuapp.com"```
+ 4.```URL: "https://HEROKU_APP_NAME.herokuapp.com"```
           
 5. change this name 😑😑😑
 
