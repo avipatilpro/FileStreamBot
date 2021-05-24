@@ -132,7 +132,5 @@ Bot also Supported with Channels. Just add bot Channel as Admin. If any new file
 
 - [@Avishkarpatil](https://telegram.me/Avishkarpatil)
 
-- [@EverythingSuckz](https://github.com/EverythingSuckz) & [@AbirHasan2005](https://github.com/AbirHasan2005)
+- [@EverythingSuckz](https://github.com/EverythingSuckz)
 
-- [eyaadh](https://github.com/eyaadh) for his awesome [Megatron Bot](https://github.com/eyaadh/megadlbot_oss)
-- [Dan Tès](https://telegram.dog/haskell) for his [Pyrogram Library](https://github.com/pyrogram/pyrogram)
