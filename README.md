@@ -1,4 +1,4 @@
-<h1 align="center">Telegram File Stream Bot !</h1>
+<h1 align="center">Telegram File to Link Bot !</h1>
 <p align="center">
   <a href="https://github.com/Avipatilpro/FileStreamBot">
     <img src="https://socialify.git.ci/Avipatilpro/FileStreamBot/image?description=1&font=Source%20Code%20Pro&forks=1&issues=1&logo=https%3A%2F%2Fwww.flaticon.com%2Fpremium-icon%2Ficons%2Fsvg%2F2321%2F2321089.svg&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Dark" alt="Cover Image" width="650">
@@ -56,9 +56,9 @@ then goto the <a href="#mandatory-vars">variables tab</a> for more info on setti
 
 ### Host it on VPS or Locally
 
-```sh
-git clone https://github.com/AbirHasan2005/Pyro-FileStreamBot
-cd TG-FileStreamBot
+```py
+git clone https://github.com/avipatilpro/FileStreamBot
+cd FileStreamBot
 virtualenv -p /usr/bin/python3 venv
 . ./venv/bin/activate
 pip install -r requirements.txt
@@ -74,8 +74,8 @@ If you're on Heroku, just add these in the Environmental Variables
 or if you're Locally hosting, create a file named `.env` in the root directory and add all the variables there.
 An example of `.env` file:
 
-```sh
-API_ID=452525
+```py
+API_ID=12345
 API_HASH=esx576f8738x883f3sfzx83
 BOT_TOKEN=55838383:yourtbottokenhere
 BIN_CHANNEL=-100
