@@ -20,7 +20,7 @@ async def start(b, m):
         )
     usr_cmd = m.text.split("_")[-1]
     if usr_cmd == "/start":
-        if Var.UPDATES_CHANNEL is not None:
+        if Var.UPDATES_CHANNEL != "None":
             try:
                 user = await b.get_chat_member(Var.UPDATES_CHANNEL, m.chat.id)
                 if user.status == "kicked":
@@ -67,7 +67,7 @@ async def start(b, m):
                                                                                        
                                                                             
     else:
-        if Var.UPDATES_CHANNEL is not None:
+        if Var.UPDATES_CHANNEL != "None":
             try:
                 user = await b.get_chat_member(Var.UPDATES_CHANNEL, m.chat.id)
                 if user.status == "kicked":

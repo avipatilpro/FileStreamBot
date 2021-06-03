@@ -15,7 +15,7 @@
   "repository": "https://github.com/avipatilpro/FileStreamBot/",
   "success_url": "/",
   "logo": "https://telegra.ph/file/9d63060a06c6fc6def1da.png",
-  "website": "avifilestreambot.herokuapp.com",
+  "website": "avipatilweb.me",
   "env": {
       "ENV": {
           "description": "Set this to True if you don't want to crash the bot",
@@ -35,6 +35,7 @@
       },
       "BIN_CHANNEL": {
           "description": "The BIN Channel ID. Read the readme for more info about this var"
+          
       },
       "DATABASE_URL": {
           "description": "MongoDB URI for saving User IDs when they first Start the Bot. We will use that for Broadcasting to them. I will try to add more features related with Database. If you need help to get the URI you can ask in Support Group: https://t.me/linux_repo"
@@ -48,7 +49,7 @@
       },
       "UPDATES_CHANNEL": {
           "description": "Put a Public Channel Username, so every user have to Join that channel to use the bot. Must add bot to channel as Admin to work properly.",
-          "required": false
+          
       },
       "SLEEP_THRESHOLD": {
           "description": "Floodwait Sleep timer. Read the readme for more info about this var",
@@ -76,7 +77,7 @@
           "required": false
       },
       "SESSION_NAME": {
-          "description": "Any Session Name for Bot",
+          "description": " Session Name for Bot [ Add AvishkarPatil ]",
           "required": false
       }
   },
