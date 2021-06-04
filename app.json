@@ -49,6 +49,7 @@
       },
       "UPDATES_CHANNEL": {
           "description": "Put a Public Channel Username, so every user have to Join that channel to use the bot. Must add bot to channel as Admin to work properly.",
+          "required": false
           
       },
       "SLEEP_THRESHOLD": {
