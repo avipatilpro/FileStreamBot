@@ -122,7 +122,7 @@ async def channel_receive_handler(bot, broadcast):
             message_id=broadcast.message_id,
             reply_markup=InlineKeyboardMarkup(
                 [
-                    [InlineKeyboardButton("Dᴏᴡɴʟᴏᴀᴅ ʟɪɴᴋ 📥", url=f"https://xtreamfile.herokuapp.com/{str(log_msg.message_id)}")]  # Change Name According to Your App / Site Name
+                    [InlineKeyboardButton("Dᴏᴡɴʟᴏᴀᴅ ʟɪɴᴋ 📥", url=stream_link)]  # Change Name According to Your App / Site Name
                 ]
             )
         )
