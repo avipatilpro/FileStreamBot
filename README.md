@@ -1,8 +1,9 @@
 <h1 align="center">Telegram File to Link Bot !</h1>
 <p align="center">
   <a href="https://github.com/Avipatilpro/FileStreamBot">
-    <img src="https://socialify.git.ci/Avipatilpro/FileStreamBot/image?description=1&font=Source%20Code%20Pro&forks=1&issues=1&logo=https%3A%2F%2Fwww.flaticon.com%2Fpremium-icon%2Ficons%2Fsvg%2F2321%2F2321089.svg&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Dark" alt="Cover Image" width="650">
+    <img src="https://socialify.git.ci/avipatilpro/FileStreamBot/image?description=1&descriptionEditable=Telegram%20File%20to%20Link%20Fastest%20Bot%20%2C%20also%20used%20for%20Movies%20streaming%20Generate%20Direct%20Links&font=KoHo&forks=1&logo=https%3A%2F%2Fi.ibb.co%2FZJzJ9Hq%2Flink-3x.png&pattern=Brick%20Wall&stargazers=1&theme=Dark" alt="Cover Image" width="550">
   </a>
+  
   <p align="center">
     A Telegram bot to stream files to web.
     <br />
@@ -37,14 +38,7 @@ Either you could locally host or deploy on [Heroku](https://heroku.com)
 ### Deploy on Heroku
 
 1. Fork This Repo
-2. In .github/workflow/YOURACTION.yml 
-3. edit this file and at last line in file replace the app name with your heroku app name
-
- 4.```URL: "https://HEROKU_APP_NAME.herokuapp.com"```
-          
-5. change this name 😑😑😑
-
-6. If You nota Do this bot will not work
+2. Click on Deploy Easily
 
 ### So Follow Above Steps 👆 and then also deply other wise not work
 
