@@ -247,7 +247,7 @@ async def help_handler(bot, message):
                 disable_web_page_preview=True)
             return
     await message.reply_text(
-        text=HELP_BUTTONS,
+        text=HELP_TEXT,
         parse_mode="HTML",
         disable_web_page_preview=True,
         reply_markup=HELP_BUTTONS
