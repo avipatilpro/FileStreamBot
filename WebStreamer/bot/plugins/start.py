@@ -15,7 +15,8 @@ START_TEXT = """
 <i>Cʟɪᴄᴋ ᴏɴ Hᴇʟᴘ ᴛᴏ ɢᴇᴛ ᴍᴏʀᴇ ɪɴғᴏʀᴍᴀᴛɪᴏɴ</i>\n
 <i><u>𝗪𝗔𝗥𝗡𝗜𝗡𝗚 🚸</u></i>
 <b>🔞 Pʀᴏɴ ᴄᴏɴᴛᴇɴᴛꜱ ʟᴇᴀᴅꜱ ᴛᴏ ᴘᴇʀᴍᴀɴᴇɴᴛ ʙᴀɴ ʏᴏᴜ.</b>\n\n
-<i><b>🍃 Bᴏᴛ Mᴀɪɴᴛᴀɪɴᴇᴅ Bʏ :</b>@AvishkarPatil</i>"""
+<i><b>🍃 Bᴏᴛ Mᴀɪɴᴛᴀɪɴᴇᴅ Bʏ :</b>@download_maram 
+</i>"""
 
 HELP_TEXT = """
 <i>- Sᴇɴᴅ ᴍᴇ ᴀɴʏ ꜰɪʟᴇ (ᴏʀ) ᴍᴇᴅɪᴀ ꜰʀᴏᴍ ᴛᴇʟᴇɢʀᴀᴍ.</i>
@@ -28,11 +29,7 @@ HELP_TEXT = """
 
 ABOUT_TEXT = """
 <b>⚜ Mʏ ɴᴀᴍᴇ : FileStreamX</b>\n
-<b>🔸Vᴇʀꜱɪᴏɴ : <a href='https://telegram.me/AvishkarPatil'>3.0.1</a></b>\n
-<b>🔹Sᴏᴜʀᴄᴇ : <a href='https://github.com/avipatilpro/FileStreamBot'>Cʟɪᴄᴋ Hᴇʀᴇ</a></b>\n
-<b>🔸GitHub : <a href='https://GitHub.com/avipatilpro'>Fᴏʟʟᴏᴡ</a></b>\n
-<b>🔹Dᴇᴠᴇʟᴏᴘᴇʀ : <a href='https://telegram.me/Avishkarpatil'>Aᴠɪsʜᴋᴀʀ Pᴀᴛɪʟ</a></b>\n
-<b>🔸Lᴀꜱᴛ ᴜᴘᴅᴀᴛᴇᴅ : <a href='https://telegram.me/AvishkarPatil'>[ 11-ᴊᴜʟʏ-21 ] 04:35 PM</a></b>"""
+<b>🔸Lᴀꜱᴛ ᴜᴘᴅᴀᴛᴇᴅ : <a href='https://telegram.me/Cinema_Great'>[ 11-ᴊᴜʟʏ-21 ] 04:35 PM</a></b>"""
 
 START_BUTTONS = InlineKeyboardMarkup(
         [[
@@ -189,7 +186,7 @@ async def start(b, m):
 <b>📦 Fɪʟᴇ ꜱɪᴢᴇ :</b> <i>{}</i>\n
 <b>📥 Dᴏᴡɴʟᴏᴀᴅ :</b> <i>{}</i>\n
 <b>🚸 Nᴏᴛᴇ : Lɪɴᴋ ᴇxᴘɪʀᴇᴅ ɪɴ 24 ʜᴏᴜʀꜱ</b>\n
-<i>🍃 Bᴏᴛ Mᴀɪɴᴛᴀɪɴᴇᴅ Bʏ :</i> <b>@AvishkarPatil</b>
+<i>🍃 Bᴏᴛ Mᴀɪɴᴛᴀɪɴᴇᴅ Bʏ :</i> <b>@Cinema_Great</b>
 """
 
         await m.reply_text(
