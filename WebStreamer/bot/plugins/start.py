@@ -40,23 +40,23 @@ ABOUT_TEXT = """
 
 START_BUTTONS = InlineKeyboardMarkup(
         [[
-        InlineKeyboardButton('Hᴇʟᴘ', callback_data='help'),
-        InlineKeyboardButton('Aʙᴏᴜᴛ', callback_data='about'),
-        InlineKeyboardButton('Cʟᴏsᴇ', callback_data='close')
+        InlineKeyboardButton('راهنما ', callback_data='help'),
+        InlineKeyboardButton('درباره ما', callback_data='about'),
+        InlineKeyboardButton('بستن ', callback_data='close')
         ]]
     )
 HELP_BUTTONS = InlineKeyboardMarkup(
         [[
-        InlineKeyboardButton('Hᴏᴍᴇ', callback_data='home'),
-        InlineKeyboardButton('Aʙᴏᴜᴛ', callback_data='about'),
-        InlineKeyboardButton('Cʟᴏsᴇ', callback_data='close')
+        InlineKeyboardButton('بازگشت', callback_data='home'),
+        InlineKeyboardButton('درباره ما', callback_data='about'),
+        InlineKeyboardButton('بستن ', callback_data='close')
         ]]
     )
 ABOUT_BUTTONS = InlineKeyboardMarkup(
         [[
-        InlineKeyboardButton('Hᴏᴍᴇ', callback_data='home'),
-        InlineKeyboardButton('Hᴇʟᴘ', callback_data='help'),
-        InlineKeyboardButton('Cʟᴏsᴇ', callback_data='close')
+        InlineKeyboardButton('بازگشت', callback_data='home'),
+        InlineKeyboardButton('راهنما', callback_data='help'),
+        InlineKeyboardButton('بستن ', callback_data='close')
         ]]
     )
 
@@ -193,13 +193,14 @@ async def start(b, m):
 <b>📦 اندازه فایل :</b> <i>{}</i>\n
 <b>📥 لینک دانلود :</b> <i>{}</i>\n
 توجه داشته باشید لینک تا 24 ساعت دیگه منقضی میشه 
+
 حمایت از ما : https://idpay.ir/cinemagreat
 """
 
         await m.reply_text(
             text=msg_text.format(file_name, file_size, stream_link),
             parse_mode="HTML",
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Dᴏᴡɴʟᴏᴀᴅ ɴᴏᴡ 📥", url=stream_link)]])
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("دانلود کنید📥", url=stream_link)]])
         )
 
 
