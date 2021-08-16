@@ -71,7 +71,7 @@ async def private_receive_handler(c: Client, m: Message):
             file_name = f"{m.audio.file_name}"
 
         msg_text ="""
-<i><u>لینک شما !</u></i>\n
+<i><u>لینک شما آماده است !</u></i>\n
 <b>📂 نام فایل‌ :</b> <i>{}</i>\n
 <b>📦 اندازه فایل :</b> <i>{}</i>\n
 <b>📥 لینک دانلود :</b> <i>{}</i>\n
