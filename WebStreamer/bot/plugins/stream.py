@@ -75,7 +75,8 @@ async def private_receive_handler(c: Client, m: Message):
 <b>📂 نام فایل‌ :</b> <i>{}</i>\n
 <b>📦 اندازه فایل :</b> <i>{}</i>\n
 <b>📥 لینک دانلود :</b> <i>{}</i>\n
-توجه داشته باشید لینک ها داعمیه منقضی نمیشه.
+توجه داشته باشید این لینک داعمیه منقضی نمیشه.
+
 حمایت از ما : https://idpay.ir/cinemagreat
 """
 
@@ -84,7 +85,7 @@ async def private_receive_handler(c: Client, m: Message):
             text=msg_text.format(file_name, file_size, stream_link),
             parse_mode="HTML", 
             disable_web_page_preview=True,
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Dᴏᴡɴʟᴏᴀᴅ ɴᴏᴡ 📥", url=stream_link)]]),
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("دانلود کنید 📥", url=stream_link)]]),
             quote=True
         )
     except FloodWait as e:
