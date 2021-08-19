@@ -108,7 +108,7 @@ async def start(b, m):
             except UserNotParticipant:
                 await b.send_message(
                     chat_id=m.chat.id,
-                    text="<i>Jᴏɪɴ ᴍʏ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ ᴛᴏ ᴜsᴇ ᴍᴇ 🔐</i>",
+                    text="<i>برای کار با ربات ابتدا در چنل ما عضو شوید و سپس /start کنید 🔐</i>",
                     reply_markup=InlineKeyboardMarkup(
                         [[
                             InlineKeyboardButton("Jᴏɪɴ ɴᴏᴡ 🔓", url=f"https://t.me/{Var.UPDATES_CHANNEL}")
@@ -139,8 +139,8 @@ async def start(b, m):
                 if user.status == "kicked":
                     await b.send_message(
                         chat_id=m.chat.id,
-                        text="**Sᴏʀʀʏ Sɪʀ, Yᴏᴜ ᴀʀᴇ Bᴀɴɴᴇᴅ ᴛᴏ ᴜsᴇ ᴍᴇ. Qᴜɪᴄᴋʟʏ ᴄᴏɴᴛᴀᴄᴛ** @Avishkarpatil",
-                        parse_mode="markdown",
+                        text="_شما به دلیل تخلفات از ربات مسدود شده اید اگر فکر می‌کنید اشتباه بن شدید با ما در ارتباط باشید _\n\n @download_maram **آیدی پشتیبانی **",
+                      parse_mode="markdown",
                         disable_web_page_preview=True
                     )
                     return
