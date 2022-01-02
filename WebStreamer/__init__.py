@@ -1,5 +1,1 @@
-
-# Maintained By : Avishkar Patil [ @Avishkarpatil ] [ Telegram ]
-
-import time
-StartTime = time.time()
+# This file is a part of avipatilpro/FileStreamBot

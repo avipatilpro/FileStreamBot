@@ -15,7 +15,7 @@
   "repository": "https://github.com/avipatilpro/FileStreamBot/",
   "success_url": "/",
   "logo": "https://i.ibb.co/ZJzJ9Hq/link-3x.png",
-  "website": "avipatilweb.me",
+  "website": "avipatilweb.ml",
   "env": {
       "ENV": {
           "description": "Set this to True if you don't want to crash the bot",

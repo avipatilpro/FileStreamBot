@@ -1,5 +1,3 @@
-# Taken from megadlbot_oss <https://github.com/eyaadh/megadlbot_oss/blob/master/mega/telegram/utils/custom_download.py>
-# Thanks to Eyaadh <https://github.com/eyaadh>
 
 import math
 from typing import Union

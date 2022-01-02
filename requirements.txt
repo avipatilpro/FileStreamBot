@@ -5,5 +5,3 @@ python-dotenv
 motor
 aiofiles
 dnspython
-apscheduler
-requests

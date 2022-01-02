@@ -1,4 +1,3 @@
-# (c) @AbirHasan2005
 
 import asyncio
 import traceback
