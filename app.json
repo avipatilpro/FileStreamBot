@@ -37,6 +37,9 @@
           "description": "The BIN Channel ID. Read the readme for more info about this var"
           
       },
+      "PING_INTERVAL": {
+          "description": "Add Ping Interval Default Is 500"
+      },
       "DATABASE_URL": {
           "description": "MongoDB URI for saving User IDs when they first Start the Bot. We will use that for Broadcasting to them. I will try to add more features related with Database. If you need help to get the URI you can ask in Support Group: https://t.me/linux_repo"
       },
