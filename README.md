@@ -15,14 +15,6 @@
   </p>
 </p>
 
-<br>
-
-#### Demo Bot:  
-<a href="https://telegram.me/FxStreamBot"><img src="https://img.shields.io/badge/Demo-Telegram%20Bot-blue.svg?logo=telegram"></a>
-
-<hr>
-
-
 
 ## 🍁 About This Bot :
 
@@ -38,9 +30,7 @@
 
 ## ♢ How to make your own :
 
-Either you could locally host or deploy on [Heroku](https://heroku.com)
-
-<br>
+<i>Either you could locally host or deploy on [Heroku](https://heroku.com)</i>
 
 #### ♢ Click on This Drop-down and get more details
 
@@ -141,4 +131,8 @@ To get an instant stream link, just forward any media to the bot and boom, its f
 Bot also Supported with Channels. Just add bot Channel as Admin. If any new file comes in Channel it will edit it with **Get Download Link** Button. </details>
 
 
-- [Avishkarpatil](https://telegram.me/Avishkarpatil)
+---
+<h4 align='center'>© 2022 Aνιѕнкαя Pαтιℓ</h4>
+
+<!-- DO NOT REMOVE THIS CREDIT 🤬 🤬 -->
+
