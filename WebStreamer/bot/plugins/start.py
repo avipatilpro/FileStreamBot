@@ -6,6 +6,7 @@ from WebStreamer.utils.database import Database
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import UserNotParticipant
+from pyrogram.enums.parse_mode import ParseMode
 
 db = Database(Var.DATABASE_URL, Var.SESSION_NAME)
 
@@ -95,7 +96,7 @@ def get_media_file_name(m):
         return None
 
 
-@StreamBot.on_message(filters.command('start') & filters.private & ~filters.edited)
+@StreamBot.on_message(filters.command('start') & filters.private)
 async def start(b, m):
     if not await db.is_user_exist(m.from_user.id):
         await db.add_user(m.from_user.id)
@@ -112,7 +113,7 @@ async def start(b, m):
                     await b.send_message(
                         chat_id=m.chat.id,
                         text="__Sᴏʀʀʏ Sɪʀ, Yᴏᴜ ᴀʀᴇ Bᴀɴɴᴇᴅ ᴛᴏ ᴜsᴇ ᴍᴇ. Cᴏɴᴛᴀᴄᴛ ᴛʜᴇ Dᴇᴠᴇʟᴏᴘᴇʀ__\n\n @AvishkarPatil **Tʜᴇʏ Wɪʟʟ Hᴇʟᴘ Yᴏᴜ**",
-                        parse_mode="markdown",
+                        parse_mode=ParseMode.MARKDOWN,
                         disable_web_page_preview=True
                     )
                     return
@@ -125,19 +126,19 @@ async def start(b, m):
                             InlineKeyboardButton("Jᴏɪɴ ɴᴏᴡ 🔓", url=f"https://t.me/{Var.UPDATES_CHANNEL}")
                             ]]
                     ),
-                    parse_mode="HTML"
+                    parse_mode=ParseMode.HTML
                 )
                 return
             except Exception:
                 await b.send_message(
                     chat_id=m.chat.id,
                     text="<i>Sᴏᴍᴇᴛʜɪɴɢ ᴡʀᴏɴɢ ᴄᴏɴᴛᴀᴄᴛ ᴍʏ ᴅᴇᴠᴇʟᴏᴘᴇʀ</i> <b><a href='http://t.me/Avishkarpatil'>[ ᴄʟɪᴄᴋ ʜᴇʀᴇ ]</a></b>",
-                    parse_mode="HTML",
+                    parse_mode=ParseMode.HTML,
                     disable_web_page_preview=True)
                 return
         await m.reply_text(
             text=START_TEXT.format(m.from_user.mention),
-            parse_mode="HTML",
+            parse_mode=ParseMode.HTML,
             disable_web_page_preview=True,
             reply_markup=START_BUTTONS
               )                                                                         
@@ -151,7 +152,7 @@ async def start(b, m):
                     await b.send_message(
                         chat_id=m.chat.id,
                         text="**Sᴏʀʀʏ Sɪʀ, Yᴏᴜ ᴀʀᴇ Bᴀɴɴᴇᴅ ᴛᴏ ᴜsᴇ ᴍᴇ. Qᴜɪᴄᴋʟʏ ᴄᴏɴᴛᴀᴄᴛ** @Avishkarpatil",
-                        parse_mode="markdown",
+                        parse_mode=ParseMode.MARKDOWN,
                         disable_web_page_preview=True
                     )
                     return
@@ -166,14 +167,14 @@ async def start(b, m):
                         
                         ]]
                     ),
-                    parse_mode="markdown"
+                    parse_mode=ParseMode.MARKDOWN
                 )
                 return
             except Exception:
                 await b.send_message(
                     chat_id=m.chat.id,
                     text="**Sᴏᴍᴇᴛʜɪɴɢ ᴡᴇɴᴛ Wʀᴏɴɢ. Cᴏɴᴛᴀᴄᴛ ᴍᴇ** [Aᴠɪsʜᴋᴀʀ Pᴀᴛɪʟ](https://t.me/Avishkarpatil).",
-                    parse_mode="markdown",
+                    parse_mode=ParseMode.MARKDOWN,
                     disable_web_page_preview=True)
                 return
 
@@ -181,10 +182,10 @@ async def start(b, m):
         file_name = get_media_file_name(get_msg)
         file_size = humanbytes(get_media_file_size(get_msg))
 
-        stream_link = "https://{}/{}/{}".format(Var.FQDN, get_msg.message_id, file_name) if Var.ON_HEROKU or Var.NO_PORT else \
+        stream_link = "https://{}/{}/{}".format(Var.FQDN, get_msg.id, file_name) if Var.ON_HEROKU or Var.NO_PORT else \
             "http://{}:{}/{}/{}".format(Var.FQDN,
                                      Var.PORT,
-                                     get_msg.message_id,
+                                     get_msg.id,
                                      file_name)
 
         msg_text ="""
@@ -198,7 +199,7 @@ async def start(b, m):
 
         await m.reply_text(
             text=msg_text.format(file_name, file_size, stream_link),
-            parse_mode="HTML",
+            parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Dᴏᴡɴʟᴏᴀᴅ ɴᴏᴡ 📥", url=stream_link)]])
         )
 
@@ -213,7 +214,7 @@ async def start(bot, update):
     )
 
 
-@StreamBot.on_message(filters.command('help') & filters.private & ~filters.edited)
+@StreamBot.on_message(filters.command('help') & filters.private)
 async def help_handler(bot, message):
     if not await db.is_user_exist(message.from_user.id):
         await db.add_user(message.from_user.id)
@@ -228,7 +229,7 @@ async def help_handler(bot, message):
                 await bot.send_message(
                     chat_id=message.chat.id,
                     text="<i>Sᴏʀʀʏ Sɪʀ, Yᴏᴜ ᴀʀᴇ Bᴀɴɴᴇᴅ ᴛᴏ ᴜsᴇ ᴍᴇ. Cᴏɴᴛᴀᴄᴛ ᴛʜᴇ Dᴇᴠᴇʟᴏᴘᴇʀ</i>",
-                    parse_mode="HTML",
+                    parse_mode=ParseMode.HTML,
                     disable_web_page_preview=True
                 )
                 return
@@ -241,19 +242,19 @@ async def help_handler(bot, message):
                         InlineKeyboardButton("🤖 Jᴏɪɴ Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ", url=f"https://t.me/{Var.UPDATES_CHANNEL}")
                         ]]
                 ),
-                parse_mode="markdown"
+                parse_mode=ParseMode.MARKDOWN
             )
             return
         except Exception:
             await bot.send_message(
                 chat_id=message.chat.id,
                 text="__Sᴏᴍᴇᴛʜɪɴɢ ᴡᴇɴᴛ Wʀᴏɴɢ. Cᴏɴᴛᴀᴄᴛ ᴍᴇ__ [Aᴠɪsʜᴋᴀʀ Pᴀᴛɪʟ](https://t.me/Avishkarpatil).",
-                parse_mode="markdown",
+                parse_mode=ParseMode.MARKDOWN,
                 disable_web_page_preview=True)
             return
     await message.reply_text(
         text=HELP_TEXT,
-        parse_mode="HTML",
+        parse_mode=ParseMode.HTML,
         disable_web_page_preview=True,
         reply_markup=HELP_BUTTONS
         )
