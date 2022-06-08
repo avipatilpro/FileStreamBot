@@ -1,4 +1,4 @@
-pyrogram<=1.4.16
+pyrogram>=2.0.0,<=2.0.26
 tgcrypto<=1.2.3
 aiohttp<=3.8.1
 python-dotenv<=0.20.0
