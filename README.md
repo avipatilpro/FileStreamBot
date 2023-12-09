@@ -1,30 +1,20 @@
 <h1 align="center">FileStreamBot</h1>
 <p align="center">
   <a href="https://github.com/Avipatilpro/FileStreamBot">
-    <img src="https://socialify.git.ci/avipatilpro/FileStreamBot/image?description=1&descriptionEditable=Telegram%20File%20to%20Link%20Fastest%20Bot%20%2C%20also%20used%20for%20Movies%20streaming%20Generate%20Direct%20Links&font=KoHo&forks=1&logo=https%3A%2F%2Fi.ibb.co%2FZJzJ9Hq%2Flink-3x.png&pattern=Brick%20Wall&stargazers=1&theme=Dark" alt="Cover Image" width="550">
+    <img src="https://graph.org/file/80d1f94e81bbc1acadb36.jpg" alt="Cover Image" width="550">
   </a>
-  
+</p>  
   <p align="center">
-    A Telegram bot to all media and documents files to web link .
-    <br />
    </strong></a>
-    <br />
+    <br><b>
     <a href="https://github.com/Avipatilpro/FileStreamBot/issues">Report a Bug</a>
     |
-    <a href="https://github.com/Avipatilpro/FileStreamBot/issues">Request Feature</a>
+    <a href="https://github.com/Avipatilpro/FileStreamBot/issues">Request Feature</a></b>
   </p>
-</p>
-
-<br>
-
-#### Demo Bot:  
-<a href="https://telegram.me/FxStreamBot"><img src="https://img.shields.io/badge/Demo-Telegram%20Bot-blue.svg?logo=telegram"></a>
-
-<hr>
 
 
 
-## 🍁 About This Bot :
+### 🍁 About :
 
 <p align="center">
     <a href="https://github.com/Avipatilpro/FileStreamBot">
@@ -32,113 +22,175 @@
     </a>
 </p>
 <p align='center'>
-    This bot will give you stream links for Telegram files without the need of waiting till the download completes
+  This bot provides stream links for Telegram files without the necessity of waiting for the download to complete, offering the ability to store files.
 </p>
 
 
-## ♢ How to make your own :
+### ♢ How to Deploy :
 
-Either you could locally host or deploy on [Heroku](https://heroku.com)
-
-<br>
+<i>Either you could locally host, VPS, or deploy on [Heroku](https://heroku.com)</i>
 
 #### ♢ Click on This Drop-down and get more details
 
 <br>
 <details>
-  <summary><b>Deploy on Heroku :</b></summary>
+  <summary><b>Deploy on Heroku (Paid)  :</b></summary>
+
+- Fork This Repo
+- Click on Deploy Easily
+- Press the below button to Fast deploy on Heroku
 
 
-1. Fork This Repo
-2. Click on Deploy Easily
-
-<h4> So Follow Above Steps 👆 and then also deply other wise not work</h4>
-
-Press the below button to Fast deploy on Heroku
-
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
-
-then goto the <a href="#mandatory-vars">variables tab</a> for more info on setting up environmental variables. </details>
-
+   [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/avipatilpro/FileStreamBot)
+- Go to <a href="#mandatory-vars">variables tab</a> for more info on setting up environmental variables. </details>
 
 <details>
-  <summary><b>Host it on VPS Locally :</b></summary>
+  <summary><b>Deploy Locally :</b></summary>
+<br>
 
-
-```py
+```sh
 git clone https://github.com/avipatilpro/FileStreamBot
 cd FileStreamBot
-virtualenv -p /usr/bin/python3 venv
+python3 -m venv ./venv
 . ./venv/bin/activate
 pip install -r requirements.txt
-python3 -m WebStreamer
+python3 -m FileStream
 ```
 
-and to stop the whole bot,
+- To stop the whole bot,
  do <kbd>CTRL</kbd>+<kbd>C</kbd>
 
-Setting up things
+- If you want to run this bot 24/7 on the VPS, follow these steps.
+```sh
+sudo apt install tmux -y
+tmux
+python3 -m FileStream
+```
+- now you can close the VPS and the bot will run on it.
+
+  </details>
+
+<details>
+  <summary><b>Deploy using Docker :</b></summary>
+<br>
+* Clone the repository:
+```sh
+git clone https://github.com/avipatilpro/FileStreamBot
+cd FileStreamBot
+```
+* Build own Docker image:
+```sh
+docker build -t file-stream .
+```
+
+* Create ENV and Start Container:
+```sh
+docker run -d --restart unless-stopped --name fsb \
+-v /PATH/TO/.env:/app/.env \
+-p 8000:8000 \
+file-stream
+```
+- if you need to change the variables in .env file after your bot was already started, all you need to do is restart the container for the bot settings to get updated:
+```sh
+docker restart fsb
+```
+
+  </details>
+
+<details>
+  <summary><b>Setting up things :</b></summary>
+
 
 If you're on Heroku, just add these in the Environmental Variables
 or if you're Locally hosting, create a file named `.env` in the root directory and add all the variables there.
 An example of `.env` file:
 
-```py
-API_ID=12345
-API_HASH=esx576f8738x883f3sfzx83
-BOT_TOKEN=55838383:yourtbottokenhere
-BIN_CHANNEL=-100
-PORT=8080
-FQDN=your_server_ip
-OWNER_ID=your_user_id
-DATABASE_URL=mongodb_uri
+```sh
+API_ID = 789456
+API_HASH = ysx275f9638x896g43sfzx65
+BOT_TOKEN = 12345678:your_bot_token
+BIN_CHANNEL = -100xxxxxxxx
+DATABASE_URL = mongodb://admin:pass@192.168.27.1
+FQDN = 192.168.27.1
+HAS_SSL = False
+MULTI_TOKEN1 = 12345678:bot_token_multi_client_1
+MULTI_TOKEN2 = 12345678:bot_token_multi_client_2
+OWNER_ID = 987456321
+PORT = 8080
 ```
-  </details>
+</details>
+
 
 <details>
   <summary><b>Vars and Details :</b></summary>
 
-`API_ID` : Goto [my.telegram.org](https://my.telegram.org) to obtain this.
+#### 📝 Mandatory Vars :
 
-`API_HASH` : Goto [my.telegram.org](https://my.telegram.org) to obtain this.
+* `API_ID`: API ID of your Telegram account, can be obtained from [My Telegram](https://my.telegram.org). `int`
+* `API_HASH`: API hash of your Telegram account, can be obtained from [My Telegram](https://my.telegram.org). `str`
+* `OWNER_ID`: Your Telegram User ID, Send `/id` to [@missrose_bot](https://telegram.dog/MissRose_bot) to get Your Telegram User ID `int`
+* `BOT_TOKEN`: Telegram API token of your bot, can be obtained from [@BotFather](https://t.me/BotFather). `str`
+* `LOG_CHANNEL`: ID of the channel where bot will forward all files received from users. `int`.
+* `BOT_WORKERS`: Number of updates bot should process from Telegram at once, by default to 10 updates. `int`
+* `DATABASE_URL`: MongoDB URI for saving User Data and Files List created by user. `str`
+* `FQDN`: A Fully Qualified Domain Name if present without http/s. Defaults to `BIND_ADDRESS`. `str`
 
-`BOT_TOKEN` : Get the bot token from [@BotFather](https://telegram.dog/BotFather)
+#### 🗼 MultiClient Vars :
+* `MULTI_TOKEN1`: Add your first bot token or session strings here. `str`
+* `MULTI_TOKEN2`: Add your second bot token or session strings here. `str`
 
-`BIN_CHANNEL` : Create a new channel (private/public), add [@missrose_bot](https://telegram.dog/MissRose_bot) as admin to the channel and type /id. Now copy paste the ID into this field.
+#### 🪐 Optional Vars :
 
-`OWNER_ID` : Your Telegram User ID
+* `UPDATES_CHANNEL`: Channel Username without `@` to set channel as Update Channel `str`
+* `FORCE_UPDATES_CHANNEL`: Set to True, so every user have to Join update channel to use the bot. `bool`
+* `AUTH_USERS`: Put authorized user IDs to use bot, separated by <kbd>Space</kbd>. `int`
+* `SLEEP_THRESHOLD`: Set global flood wait threshold, auto-retry requests under 60s. `int`
+* `SESSION_NAME`: Name for the Database created on your MongoDB. Defaults to `FileStream`. `str`
+* `IMAGE_FILEID`: To set Image at `/files` command. Defaults to pre-set image. `str`
+* `WORKERS`: Number of maximum concurrent workers for handling incoming updates. Defaults to `6`. `int`
+* `PORT`: The port that you want your webapp to be listened to. Defaults to `8080`. `int`
+* `BIND_ADDRESS`: Your server bind adress. Defauls to `0.0.0.0`. `int`
+* `MODE`: Should be set to `secondary` if you only want to use the server for serving files. `str`
+* `PING_INTERVAL`: Heroku ping interval (ms), defaults to 1200 (20 minutes). `int`
+* `KEEP_ALIVE`: Self-ping server every PING_INTERVAL sec to avoid sleeping defaults to `False`. 
+* `NO_PORT`: (True/False) Set PORT to 80 or 443 hide port display; ignore if on Heroku. Defaults to `False`.
+* `HAS_SSL`: (can be either `True` or `False`) If you want the generated links in https format. Defaults to `False`. 
 
-`DATABASE_URL` : MongoDB URI for saving User IDs when they first Start the Bot. We will use that for Broadcasting to them. I will try to add more features related with Database. If you need help to get the URI you can ask in [Me Telegram](https://t.me/Avishkarpatil).
-
- Option Vars
-
-`UPDATES_CHANNEL` : Put a Public Channel Username, so every user have to Join that channel to use the bot. Must add bot to channel as Admin to work properly.
-
-`BANNED_CHANNELS` : Put IDs of Banned Channels where bot will not work. You can add multiple IDs & separate with <kbd>Space</kbd>.
-
-`SLEEP_THRESHOLD` : Set a sleep threshold for flood wait exceptions happening globally in this telegram bot instance, below which any request that raises a flood wait will be automatically invoked again after sleeping for the required amount of time. Flood wait exceptions requiring higher waiting times will be raised. Defaults to 60 seconds.
-
-`WORKERS` : Number of maximum concurrent workers for handling incoming updates. Defaults to `3`
-
-`PORT` : The port that you want your webapp to be listened to. Defaults to `8080`
-
-`WEB_SERVER_BIND_ADDRESS` : Your server bind adress. Defauls to `0.0.0.0`
-
-`NO_PORT` : If you don't want your port to be displayed. You should point your `PORT` to `80` (http) or `443` (https) for the links to work. Ignore this if you're on Heroku.
-
-`FQDN` :  A Fully Qualified Domain Name if present. Defaults to `WEB_SERVER_BIND_ADDRESS` </details>
+</details>
 
 <details>
   <summary><b>How to Use :</b></summary>
 
-:warning: **Before using the  bot, don't forget to add the bot to the `BIN_CHANNEL` as an Admin**
+:warning: **Before using the  bot, don't forget to add the bot to the `LOG_CHANNEL` as an Admin**
  
-`/start` : To check if the bot is alive or not.
+#### ‍☠️ Bot Commands :
 
-To get an instant stream link, just forward any media to the bot and boom, its fast af.
+```sh
+/start      : To check if the bot is alive or not.
+/help       : To Get Help Message.
+/about      : To check About the Bot.
+/files      : To Get All Files List of User.
+/del        : To Delete Files from DB with FileID.
+/ban        : To Ban Any Channel or User to use bot.
+/unban      : To Unban Any Channel or User to use bot.
+/status     : To Get Bot Status and Total Users.
+/broadcast  : To Broadcast any message to all users of bot.
+```
 
-### Channel Support
-Bot also Supported with Channels. Just add bot Channel as Admin. If any new file comes in Channel it will edit it with **Get Download Link** Button. </details>
+#### 🍟 Channel Support :
+
+*Bot also Supported with Channels. Just add bot Channel as Admin. If any new file comes in Channel it will edit it with **Get Download Link** Button.*
+
+</details>
+
+### ❤️ Thanks To :
+
+- [**Me**](https://github.com/AvishkarPatil) : Owner of This FileStreamBot
+- [**Deekshith SH**](https://github.com/DeekshithSH) : for some modules.
+- [**EverythingSuckz**](https://github.com/EverythingSuckz) : for his [FileStreamBot](https://github.com/EverythingSuckz/FileStreamBot)
+
+---
+<h4 align='center'>© 2024 Aνιѕнкαя Pαтιℓ</h4>
 
 
-- [Avishkarpatil](https://telegram.me/Avishkarpatil)
+

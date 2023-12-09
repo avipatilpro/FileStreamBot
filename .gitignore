@@ -115,3 +115,14 @@ dmypy.json
 
 #session files
 *.session
+*.session-journal
+
+.env
+test.py
+/test
+
+streambot.log.*
+.idea/workspace.xml
+*.xml
+*.xml
+.idea/workspace.xml
