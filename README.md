@@ -11,7 +11,13 @@
     |
     <a href="https://github.com/Avipatilpro/FileStreamBot/issues">Request Feature</a></b>
   </p>
+<<<<<<< HEAD
 
+=======
+</p>
+
+##  🚸 Updating .............
+>>>>>>> main
 
 
 ### 🍁 About :
@@ -28,7 +34,11 @@
 
 ### ♢ How to Deploy :
 
+<<<<<<< HEAD
 <i>Either you could locally host, VPS, or deploy on [Heroku](https://heroku.com)</i>
+=======
+<i>Either you could locally host or deploy on [Heroku](https://heroku.com)</i>
+>>>>>>> main
 
 #### ♢ Click on This Drop-down and get more details
 
@@ -194,3 +204,11 @@ PORT = 8080
 
 
 
+<<<<<<< HEAD
+=======
+---
+<h4 align='center'>© 2022 Aνιѕнкαя Pαтιℓ</h4>
+
+<!-- DO NOT REMOVE THIS CREDIT 🤬 🤬 -->
+
+>>>>>>> main
