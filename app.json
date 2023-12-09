@@ -1,98 +1,111 @@
 {
-  "name": "Avi-FileStreamBot",
-  "description": "A Pyrogram Telegram bot to Stream Telegram files to web. @Avishkarpatil",
+  "name": "FileStreamBot",
+  "description": "A Telegram Bot to Convert Telegram Files To Direct & Streamable Links.",
   "keywords": [
-      "telegram",
-      "stream",
-      "web",
-      "pyrogram",
-      "aiohttp",
-      "python",
-      "plugin",
-      "modular",
-      "media"
+        "telegram",
+        "files",
+        "stream"
     ],
   "repository": "https://github.com/avipatilpro/FileStreamBot/",
   "success_url": "/",
   "logo": "https://i.ibb.co/ZJzJ9Hq/link-3x.png",
-  "website": "avipatilweb.ml",
   "env": {
-      "ENV": {
-          "description": "Set this to True if you don't want to crash the bot",
-          "value": "True"
-      },
-      "APP_NAME": {
-          "description": "Copy-Paste the app name that you just typed above."
-      },
-      "API_ID": {
-          "description": "Get this value from https://my.telegram.org"
-      },
-      "API_HASH": {
-          "description": "Get this value from https://my.telegram.org"
-      },
-      "BOT_TOKEN": {
-          "description": "Get this value from @BotFather"
-      },
-      "BIN_CHANNEL": {
-          "description": "The BIN Channel ID. Read the readme for more info about this var"
-          
-      },
-      "PING_INTERVAL": {
-          "description": "Add Ping Interval Default Is 500",
-          "required": false
-      },
-      "DATABASE_URL": {
-          "description": "MongoDB URI for saving User IDs when they first Start the Bot. We will use that for Broadcasting to them. I will try to add more features related with Database. If you need help to get the URI you can ask in Support Group: https://t.me/linux_repo"
-      },
-      "OWNER_ID": {
-          "description": "Your Telegram User ID"
-      },
-      "BANNED_CHANNELS": {
-          "description": "Put IDs of Banned Channels where bot will not work. You can add multiple IDs & separate with Space.",
-          "required": false
-      },
-      "UPDATES_CHANNEL": {
-          "description": "Put a Public Channel Username, so every user have to Join that channel to use the bot. Must add bot to channel as Admin to work properly.",
-          "required": false
-          
-      },
-      "SLEEP_THRESHOLD": {
-          "description": "Floodwait Sleep timer. Read the readme for more info about this var",
-          "required": false
-      },
-      "WORKERS": {
-          "description": "No. of workers that is to be assigned. Read the readme for more info about this var",
-          "required": false
-      },
-      "PORT": {
-          "description": "Port that you want your webapp to be listened to. Read the readme for more info about this var",
-          "required": false
-      },
-      "NO_PORT": {
-          "description": "If you don't want your port to be displayed. Read the readme for more info about this var",
-          "value": "False",
-          "required": false
-      },
-      "BIND_ADRESS": {
-          "description": "Read the readme for more info about this var",
-          "required": false
-      },
-      "FQDN": {
-          "description": "Read the readme for more info about this var",
-          "required": false
-      },
-      "SESSION_NAME": {
-          "description": " Session Name for Bot [ Add AvishkarPatil ]",
-          "required": false
-      }
+    "ENV": {
+      "description": "Set this to True if you don't want to crash the bot",
+      "value": "True"
+    },
+    "API_ID": {
+      "description": "Get this value from https://my.telegram.org"
+    },
+    "API_HASH": {
+      "description": "Get this value from https://my.telegram.org"
+    },
+    "BOT_TOKEN": {
+      "description": "Get this value from @BotFather"
+    },
+    "LOG_CHANNEL": {
+      "description": "The BIN Channel ID. Read the readme for more info about this var"
+    },
+    "OWNER_ID": {
+      "description": "Your Telegram User ID as Owner"
+    },
+    "DATABASE_URL": {
+      "description": "MongoDB URI for saving User Data and Files List created by user."
+    },
+    "AUTH_USERS": {
+      "description": "Put IDs of Banned Channels where bot will not work. You can add multiple IDs & separate with Space.",
+      "required": false
+    },
+    "UPDATES_CHANNEL": {
+      "description": "Channel Username without `@` to set channel as Update Channel",
+      "required": false
+    },
+    "FORCE_UPDATES_CHANNEL": {
+      "description": "Set to True, so every user have to Join update channel to use the bot.",
+      "required": false
+    },
+    "SLEEP_THRESHOLD": {
+      "description": "Set global flood wait threshold, auto-retry requests under 60s. ",
+      "required": false
+    },
+    "PING_INTERVAL": {
+      "description": " Heroku ping interval (ms), defaults to 1200 (20 minutes).",
+      "required": false
+    },
+    "WORKERS": {
+      "description": "No. of workers that is to be assigned.",
+      "required": false
+    },
+    "PORT": {
+      "description": "The port that you want your webapp to be listened to",
+      "required": false
+    },
+    "NO_PORT": {
+      "description": "If you don't want your port to be displayed. Set True or False",
+      "value": "True",
+      "required": false
+    },
+    "HAS_SSL": {
+      "description": "(can be either True or False) If you want the generated links in https format.",
+      "value": "True",
+      "required": false
+    },
+    "KEEP_ALIVE": {
+      "description": "Self-ping server every PING_INTERVAL sec to avoid sleeping",
+      "value": "True",
+      "required": false
+    },
+    "BIND_ADRESS": {
+      "description": "Your server bind adress. Defauls to 0.0.0.0",
+      "required": false
+    },
+    "FQDN": {
+      "description": "Heroku app Link without http/s, you can set later. its required",
+      "required": false
+    },
+    "SESSION_NAME": {
+      "description": "Name for the Database created on your MongoDB. Defaults to FileStream",
+      "required": false
+    },
+    "IMAGE_FILEID": {
+      "description": "To set Image at /files command. Defaults to pre-set image.",
+      "required": false
+    },
+    "MODE": {
+      "description": "Should be set to `secondary` if you only want to use the server for serving files.",
+      "required": false
+    }
   },
-  "buildpacks": [{
+  "buildpacks": [
+    {
       "url": "heroku/python"
-    }],
+    }
+  ],
+  "stack": "heroku-22",
   "formation": {
-      "web": {
-          "quantity": 1,
-          "size": "free"
-      }
+    "web": {
+      "quantity": 1,
+      "size": "eco"
+    }
   }
 }
