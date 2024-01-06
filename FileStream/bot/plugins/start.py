@@ -10,6 +10,7 @@ from FileStream.utils.translation import LANG, BUTTON
 from pyrogram import filters, Client
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 from pyrogram.enums.parse_mode import ParseMode
+import asyncio
 
 db = Database(Telegram.DATABASE_URL, Telegram.SESSION_NAME)
 
@@ -63,7 +64,14 @@ async def start(bot: Client, message: Message):
                 file_id = file_check['file_id']
                 file_name = file_check['file_name']
                 if db_id == usr_cmd:
-                    await message.reply_cached_media(file_id=file_id, caption=f'**{file_name}**')
+                    if db_id == usr_cmd:
+                        filex = await message.reply_cached_media(file_id=file_id, caption=f'**{file_name}**')
+                        await asyncio.sleep(3600)
+                        try:
+                            await filex.delete()
+                            await message.delete()
+                        except Exception:
+                            pass
 
             except FIleNotFound as e:
                 await message.reply_text("**File Not Found**")

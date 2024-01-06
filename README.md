@@ -144,7 +144,8 @@ PORT = 8080
 #### 🪐 Optional Vars :
 
 * `UPDATES_CHANNEL`: Channel Username without `@` to set channel as Update Channel `str`
-* `FORCE_UPDATES_CHANNEL`: Set to True, so every user have to Join update channel to use the bot. `bool`
+* `FORCE_SUB_ID`: Force Sub Channel ID, if you want to use Force Sub. start with `-100` `int
+* `FORCE_SUB`: Set to True, so every user have to Join update channel to use the bot. `bool`
 * `AUTH_USERS`: Put authorized user IDs to use bot, separated by <kbd>Space</kbd>. `int`
 * `SLEEP_THRESHOLD`: Set global flood wait threshold, auto-retry requests under 60s. `int`
 * `SESSION_NAME`: Name for the Database created on your MongoDB. Defaults to `FileStream`. `str`

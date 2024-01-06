@@ -31,7 +31,7 @@ async def private_receive_handler(bot: Client, message: Message):
         return
 
     await is_user_exist(bot, message)
-    if Telegram.FORCE_UPDATES_CHANNEL:
+    if Telegram.FORCE_SUB:
         if not await is_user_joined(bot, message):
             return
     try:

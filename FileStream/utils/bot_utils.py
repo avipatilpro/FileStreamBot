@@ -1,4 +1,4 @@
-from pyrogram.errors import UserNotParticipant
+from pyrogram.errors import UserNotParticipant, FloodWait
 from pyrogram.enums.parse_mode import ParseMode
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 from FileStream.utils.translation import LANG
@@ -6,12 +6,32 @@ from FileStream.utils.database import Database
 from FileStream.utils.human_readable import humanbytes
 from FileStream.config import Telegram, Server
 from FileStream.bot import FileStream
+import asyncio
+from typing import (
+    Union
+)
+
 
 db = Database(Telegram.DATABASE_URL, Telegram.SESSION_NAME)
 
-async def is_user_joined(bot, message: Message):
+async def get_invite_link(bot, chat_id: Union[str, int]):
     try:
-        user = await bot.get_chat_member(Telegram.UPDATES_CHANNEL, message.chat.id)
+        invite_link = await bot.create_chat_invite_link(chat_id=chat_id)
+        return invite_link
+    except FloodWait as e:
+        print(f"Sleep of {e.value}s caused by FloodWait ...")
+        await asyncio.sleep(e.value)
+        return await get_invite_link(bot, chat_id)
+
+async def is_user_joined(bot, message: Message):
+    if Telegram.FORCE_SUB_ID and Telegram.FORCE_SUB_ID.startswith("-100"):
+        channel_chat_id = int(Telegram.FORCE_SUB_ID)    # When id startswith with -100
+    elif Telegram.FORCE_SUB_ID and (not Telegram.FORCE_SUB_ID.startswith("-100")):
+        channel_chat_id = Telegram.FORCE_SUB_ID     # When id not startswith -100
+    else:
+        return 200
+    try:
+        user = await bot.get_chat_member(chat_id=channel_chat_id, user_id=message.from_user.id)
         if user.status == "BANNED":
             await message.reply_text(
                 text=LANG.BAN_TEXT.format(Telegram.OWNER_ID),
@@ -20,27 +40,34 @@ async def is_user_joined(bot, message: Message):
             )
             return False
     except UserNotParticipant:
+        invite_link = await get_invite_link(bot, chat_id=channel_chat_id)
         if Telegram.VERIFY_PIC:
-            await message.reply_photo(
+            ver = await message.reply_photo(
                 photo=Telegram.VERIFY_PIC,
                 caption="<i>Jᴏɪɴ ᴍʏ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ ᴛᴏ ᴜsᴇ ᴍᴇ 🔐</i>",
                 parse_mode=ParseMode.HTML,
                 reply_markup=InlineKeyboardMarkup(
-                    [[
-                        InlineKeyboardButton("Jᴏɪɴ ɴᴏᴡ 🔓", url=f"https://t.me/{Telegram.UPDATES_CHANNEL}")
-                    ]]
+                [[
+                    InlineKeyboardButton("❆ Jᴏɪɴ Oᴜʀ Cʜᴀɴɴᴇʟ ❆", url=invite_link.invite_link)
+                ]]
                 )
             )
         else:
-            await message.reply_text(
-                text="<i>Jᴏɪɴ ᴍʏ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ ᴛᴏ ᴜsᴇ ᴍᴇ 🔐</i>",
+            ver = await message.reply_text(
+                text = "<i>Jᴏɪɴ ᴍʏ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ ᴛᴏ ᴜsᴇ ᴍᴇ 🔐</i>",
                 reply_markup=InlineKeyboardMarkup(
                     [[
-                        InlineKeyboardButton("Jᴏɪɴ ɴᴏᴡ 🔓", url=f"https://t.me/{Telegram.UPDATES_CHANNEL}")
+                        InlineKeyboardButton("❆ Jᴏɪɴ Oᴜʀ Cʜᴀɴɴᴇʟ ❆", url=invite_link.invite_link)
                     ]]
                 ),
                 parse_mode=ParseMode.HTML
             )
+        await asyncio.sleep(30)
+        try:
+            await ver.delete()
+            await message.delete()
+        except Exception:
+            pass
         return False
     except Exception:
         await message.reply_text(
@@ -182,7 +209,7 @@ async def verify_user(bot, message):
 
     await is_user_exist(bot, message)
 
-    if Telegram.FORCE_UPDATES_CHANNEL:
+    if Telegram.FORCE_SUB:
         if not await is_user_joined(bot, message):
             return False
 

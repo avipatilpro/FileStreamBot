@@ -23,8 +23,11 @@
     "BOT_TOKEN": {
       "description": "Get this value from @BotFather"
     },
-    "LOG_CHANNEL": {
-      "description": "The BIN Channel ID. Read the readme for more info about this var"
+    "FLOG_CHANNEL": {
+      "description": "ID of Channel Where store files sent by users. Read the readme for more info about this var"
+    },
+    "ULOG_CHANNEL": {
+      "description": "ID of Channel Where store New Users data. Read the readme for more info about this var"
     },
     "OWNER_ID": {
       "description": "Your Telegram User ID as Owner"
@@ -40,16 +43,16 @@
       "description": "Channel Username without `@` to set channel as Update Channel",
       "required": false
     },
-    "FORCE_UPDATES_CHANNEL": {
+    "FORCE_SUB_ID": {
+      "description": "Channel ID starts with -100 to set channel as Force Sub Channel",
+      "required": false
+    },
+    "FORCE_SUB": {
       "description": "Set to True, so every user have to Join update channel to use the bot.",
       "required": false
     },
     "SLEEP_THRESHOLD": {
       "description": "Set global flood wait threshold, auto-retry requests under 60s. ",
-      "required": false
-    },
-    "PING_INTERVAL": {
-      "description": " Heroku ping interval (ms), defaults to 1200 (20 minutes).",
       "required": false
     },
     "WORKERS": {
@@ -70,25 +73,28 @@
       "value": "True",
       "required": false
     },
-    "KEEP_ALIVE": {
-      "description": "Self-ping server every PING_INTERVAL sec to avoid sleeping",
-      "value": "True",
-      "required": false
-    },
-    "BIND_ADRESS": {
-      "description": "Your server bind adress. Defauls to 0.0.0.0",
+    "BIND_ADDRESS": {
+      "description": "Your server bind address. default to 0.0.0.0",
       "required": false
     },
     "FQDN": {
-      "description": "Heroku app Link without http/s, you can set later. its required",
+      "description": "Heroku app Link without http/s://, you can set later. its required",
       "required": false
     },
     "SESSION_NAME": {
       "description": "Name for the Database created on your MongoDB. Defaults to FileStream",
       "required": false
     },
-    "IMAGE_FILEID": {
+    "FILE_PIC": {
       "description": "To set Image at /files command. Defaults to pre-set image.",
+      "required": false
+    },
+    "START_PIC": {
+      "description": "To set Image at /start command. Defaults to pre-set image.",
+      "required": false
+    },
+    "VERIFY_PIC": {
+      "description": "To set Image at Force Subscribe Verify. Defaults to pre-set image.",
       "required": false
     },
     "MODE": {
