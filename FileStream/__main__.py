@@ -3,13 +3,12 @@ import asyncio
 import logging
 import traceback
 import logging.handlers as handlers
-from .config import Telegram, Server
+from FileStream.config import Telegram, Server
 from aiohttp import web
 from pyrogram import idle
 
 from FileStream.bot import FileStream
 from FileStream.server import web_server
-from FileStream.utils import ping_server
 from FileStream.bot.clients import initialize_clients
 
 logging.basicConfig(
@@ -47,10 +46,6 @@ async def start_services():
     print("---------------------- Initializing Clients ----------------------")
     await initialize_clients()
     print("------------------------------ DONE ------------------------------")
-    if Server.KEEP_ALIVE:
-        print("------------------ Starting Keep Alive Service ------------------")
-        print()
-        asyncio.create_task(ping_server())
     print()
     print("--------------------- Initializing Web Server ---------------------")
     await server.setup()

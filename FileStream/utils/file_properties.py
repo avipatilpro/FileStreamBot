@@ -30,7 +30,7 @@ async def get_file_ids(client: Client | bool, db_id: str, multi_clients, message
     if not str(client.id) in file_id_info:
         logging.debug("Storing file_id in DB")
         log_msg = await send_file(FileStream, db_id, file_info['file_id'], message)
-        msg = await client.get_messages(Telegram.LOG_CHANNEL, log_msg.id)
+        msg = await client.get_messages(Telegram.FLOG_CHANNEL, log_msg.id)
         media = get_media_from_message(msg)
         file_id_info[str(client.id)] = getattr(media, "file_id", "")
         await db.update_file_ids(db_id, file_id_info)
@@ -118,7 +118,7 @@ def get_file_info(message):
 async def update_file_id(msg_id, multi_clients):
     file_ids = {}
     for client_id, client in multi_clients.items():
-        log_msg = await client.get_messages(Telegram.LOG_CHANNEL, msg_id)
+        log_msg = await client.get_messages(Telegram.FLOG_CHANNEL, msg_id)
         media = get_media_from_message(log_msg)
         file_ids[str(client.id)] = getattr(media, "file_id", "")
 
@@ -126,10 +126,8 @@ async def update_file_id(msg_id, multi_clients):
 
 
 async def send_file(client: Client, db_id, file_id: str, message):
-    file_caption = message.caption
-    if file_caption is None:
-        file_caption = message.file_name
-    log_msg = await client.send_cached_media(chat_id=Telegram.LOG_CHANNEL, file_id=file_id,
+    file_caption = getattr(message, 'caption', None) or get_name(message)
+    log_msg = await client.send_cached_media(chat_id=Telegram.FLOG_CHANNEL, file_id=file_id,
                                              caption=f'**{file_caption}**')
 
     if message.chat.type == ChatType.PRIVATE:

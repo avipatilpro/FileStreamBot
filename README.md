@@ -41,7 +41,7 @@
 - Press the below button to Fast deploy on Heroku
 
 
-   [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/avipatilpro/FileStreamBot)
+   [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 - Go to <a href="#mandatory-vars">variables tab</a> for more info on setting up environmental variables. </details>
 
 <details>
@@ -109,7 +109,8 @@ An example of `.env` file:
 API_ID = 789456
 API_HASH = ysx275f9638x896g43sfzx65
 BOT_TOKEN = 12345678:your_bot_token
-BIN_CHANNEL = -100xxxxxxxx
+ULOG_CHANNEL = -100123456789
+FLOG_CHANNEL = -100123456789
 DATABASE_URL = mongodb://admin:pass@192.168.27.1
 FQDN = 192.168.27.1
 HAS_SSL = False
@@ -130,7 +131,8 @@ PORT = 8080
 * `API_HASH`: API hash of your Telegram account, can be obtained from [My Telegram](https://my.telegram.org). `str`
 * `OWNER_ID`: Your Telegram User ID, Send `/id` to [@missrose_bot](https://telegram.dog/MissRose_bot) to get Your Telegram User ID `int`
 * `BOT_TOKEN`: Telegram API token of your bot, can be obtained from [@BotFather](https://t.me/BotFather). `str`
-* `LOG_CHANNEL`: ID of the channel where bot will forward all files received from users. `int`.
+* `FLOG_CHANNEL`: ID of the channel where bot will store all Files from users `int`.
+* `ULOG_CHANNEL`: ID of the channel where bot will send logs of New Users`int`.
 * `BOT_WORKERS`: Number of updates bot should process from Telegram at once, by default to 10 updates. `int`
 * `DATABASE_URL`: MongoDB URI for saving User Data and Files List created by user. `str`
 * `FQDN`: A Fully Qualified Domain Name if present without http/s. Defaults to `BIND_ADDRESS`. `str`
@@ -146,13 +148,13 @@ PORT = 8080
 * `AUTH_USERS`: Put authorized user IDs to use bot, separated by <kbd>Space</kbd>. `int`
 * `SLEEP_THRESHOLD`: Set global flood wait threshold, auto-retry requests under 60s. `int`
 * `SESSION_NAME`: Name for the Database created on your MongoDB. Defaults to `FileStream`. `str`
-* `IMAGE_FILEID`: To set Image at `/files` command. Defaults to pre-set image. `str`
+* `FILE_PIC`: To set Image at `/files` command. Defaults to pre-set image. `str`
+* `START_PIC`: To set Image at `/start` command. Defaults to pre-set image. `str`
+* `VERIFY_PIC`: To set Image at Force Sub Verification. Defaults to pre-set image. `str`
 * `WORKERS`: Number of maximum concurrent workers for handling incoming updates. Defaults to `6`. `int`
 * `PORT`: The port that you want your webapp to be listened to. Defaults to `8080`. `int`
 * `BIND_ADDRESS`: Your server bind adress. Defauls to `0.0.0.0`. `int`
 * `MODE`: Should be set to `secondary` if you only want to use the server for serving files. `str`
-* `PING_INTERVAL`: Heroku ping interval (ms), defaults to 1200 (20 minutes). `int`
-* `KEEP_ALIVE`: Self-ping server every PING_INTERVAL sec to avoid sleeping defaults to `False`. 
 * `NO_PORT`: (True/False) Set PORT to 80 or 443 hide port display; ignore if on Heroku. Defaults to `False`.
 * `HAS_SSL`: (can be either `True` or `False`) If you want the generated links in https format. Defaults to `False`. 
 
@@ -166,15 +168,15 @@ PORT = 8080
 #### ‍☠️ Bot Commands :
 
 ```sh
-/start      : To check if the bot is alive or not.
+/start      : To check the bot is alive or not.
 /help       : To Get Help Message.
 /about      : To check About the Bot.
 /files      : To Get All Files List of User.
-/del        : To Delete Files from DB with FileID.
-/ban        : To Ban Any Channel or User to use bot.
-/unban      : To Unban Any Channel or User to use bot.
-/status     : To Get Bot Status and Total Users.
-/broadcast  : To Broadcast any message to all users of bot.
+/del        : To Delete Files from DB with FileID. [ADMIN]
+/ban        : To Ban Any Channel or User to use bot. [ADMIN]
+/unban      : To Unban Any Channel or User to use bot. [ADMIN]
+/status     : To Get Bot Status and Total Users. [ADMIN]
+/broadcast  : To Broadcast any message to all users of bot. [ADMIN]
 ```
 
 #### 🍟 Channel Support :
@@ -188,6 +190,7 @@ PORT = 8080
 - [**Me**](https://github.com/AvishkarPatil) : Owner of This FileStreamBot
 - [**Deekshith SH**](https://github.com/DeekshithSH) : for some modules.
 - [**EverythingSuckz**](https://github.com/EverythingSuckz) : for his [FileStreamBot](https://github.com/EverythingSuckz/FileStreamBot)
+- [**Biisal**](https://github.com/biisal) : for Stream Page UI
 
 ---
 <h4 align='center'>© 2024 Aνιѕнкαя Pαтιℓ</h4>

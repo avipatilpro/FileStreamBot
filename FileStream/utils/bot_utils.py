@@ -20,15 +20,27 @@ async def is_user_joined(bot, message: Message):
             )
             return False
     except UserNotParticipant:
-        await message.reply_text(
-            text = "<i>Jᴏɪɴ ᴍʏ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ ᴛᴏ ᴜsᴇ ᴍᴇ 🔐</i>",
-            reply_markup=InlineKeyboardMarkup(
-                [[
-                    InlineKeyboardButton("Jᴏɪɴ ɴᴏᴡ 🔓", url=f"https://t.me/{Telegram.UPDATES_CHANNEL}")
-                ]]
-            ),
-            parse_mode=ParseMode.HTML
-        )
+        if Telegram.VERIFY_PIC:
+            await message.reply_photo(
+                photo=Telegram.VERIFY_PIC,
+                caption="<i>Jᴏɪɴ ᴍʏ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ ᴛᴏ ᴜsᴇ ᴍᴇ 🔐</i>",
+                parse_mode=ParseMode.HTML,
+                reply_markup=InlineKeyboardMarkup(
+                    [[
+                        InlineKeyboardButton("Jᴏɪɴ ɴᴏᴡ 🔓", url=f"https://t.me/{Telegram.UPDATES_CHANNEL}")
+                    ]]
+                )
+            )
+        else:
+            await message.reply_text(
+                text="<i>Jᴏɪɴ ᴍʏ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ ᴛᴏ ᴜsᴇ ᴍᴇ 🔐</i>",
+                reply_markup=InlineKeyboardMarkup(
+                    [[
+                        InlineKeyboardButton("Jᴏɪɴ ɴᴏᴡ 🔓", url=f"https://t.me/{Telegram.UPDATES_CHANNEL}")
+                    ]]
+                ),
+                parse_mode=ParseMode.HTML
+            )
         return False
     except Exception:
         await message.reply_text(
@@ -134,7 +146,7 @@ async def is_user_authorized(message):
 
         if not (user_id in Telegram.AUTH_USERS):
             await message.reply_text(
-                text="You are not authorized to use this bot.",
+                text="Yᴏᴜ ᴀʀᴇ ɴᴏᴛ ᴀᴜᴛʜᴏʀɪᴢᴇᴅ ᴛᴏ ᴜsᴇ ᴛʜɪs ʙᴏᴛ.",
                 parse_mode=ParseMode.MARKDOWN,
                 disable_web_page_preview=True
             )
@@ -148,7 +160,7 @@ async def is_user_exist(bot, message):
     if not bool(await db.get_user(message.from_user.id)):
         await db.add_user(message.from_user.id)
         await bot.send_message(
-            Telegram.LOG_CHANNEL,
+            Telegram.ULOG_CHANNEL,
             f"**#NᴇᴡUsᴇʀ**\n**⬩ ᴜsᴇʀ ɴᴀᴍᴇ :** [{message.from_user.first_name}](tg://user?id={message.from_user.id})\n**⬩ ᴜsᴇʀ ɪᴅ :** `{message.from_user.id}`"
         )
 
@@ -157,7 +169,7 @@ async def is_channel_exist(bot, message):
         await db.add_user(message.chat.id)
         members = await bot.get_chat_members_count(message.chat.id)
         await bot.send_message(
-            Telegram.LOG_CHANNEL,
+            Telegram.ULOG_CHANNEL,
             f"**#NᴇᴡCʜᴀɴɴᴇʟ** \n**⬩ ᴄʜᴀᴛ ɴᴀᴍᴇ :** `{message.chat.title}`\n**⬩ ᴄʜᴀᴛ ɪᴅ :** `{message.chat.id}`\n**⬩ ᴛᴏᴛᴀʟ ᴍᴇᴍʙᴇʀs :** `{members}`"
         )
 

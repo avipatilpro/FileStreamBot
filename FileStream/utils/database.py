@@ -18,9 +18,7 @@ class Database:
         return dict(
             id=id,
             join_date=time.time(),
-            agreed_to_tos=False,
-            Links=0,
-            Plan="Free"
+            Links=0
         )
 
 # ---------------------[ ADD USER ]---------------------#
@@ -119,15 +117,15 @@ class Database:
         await self.file.update_one({"_id": ObjectId(_id)}, {"$set": {"file_ids": file_ids}})
 
 # ---------------------[ PAID SYS ]---------------------#
-    async def link_available(self, id):
-        user = await self.col.find_one({"id": id})
-        if user.get("Plan") == "Plus":
-            return "Plus"
-        elif user.get("Plan") == "Free":
-            files = await self.file.count_documents({"user_id": id})
-            if files < 11:
-                return True
-            return False
+#     async def link_available(self, id):
+#         user = await self.col.find_one({"id": id})
+#         if user.get("Plan") == "Plus":
+#             return "Plus"
+#         elif user.get("Plan") == "Free":
+#             files = await self.file.count_documents({"user_id": id})
+#             if files < 11:
+#                 return True
+#             return False
         
     async def count_links(self, id, operation: str):
         if operation == "-":

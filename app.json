@@ -33,7 +33,7 @@
       "description": "MongoDB URI for saving User Data and Files List created by user."
     },
     "AUTH_USERS": {
-      "description": "Put IDs of Banned Channels where bot will not work. You can add multiple IDs & separate with Space.",
+      "description": "Put IDs of Auth Usrs where bot will work. You can add multiple IDs & separate with Space.",
       "required": false
     },
     "UPDATES_CHANNEL": {

@@ -48,8 +48,8 @@ async def private_receive_handler(bot: Client, message: Message):
     except FloodWait as e:
         print(f"Sleeping for {str(e.value)}s")
         await asyncio.sleep(e.value)
-        await bot.send_message(chat_id=Telegram.LOG_CHANNEL,
-                               text=f"Gᴏᴛ FʟᴏᴏᴅWᴀɪᴛ ᴏғ {str(e.value)}s from [{message.from_user.first_name}](tg://user?id={message.from_user.id})\n\n**𝚄𝚜𝚎𝚛 𝙸𝙳 :** `{str(message.from_user.id)}`",
+        await bot.send_message(chat_id=Telegram.ULOG_CHANNEL,
+                               text=f"Gᴏᴛ FʟᴏᴏᴅWᴀɪᴛ ᴏғ {str(e.value)}s ғʀᴏᴍ [{message.from_user.first_name}](tg://user?id={message.from_user.id})\n\n**ᴜsᴇʀ ɪᴅ :** `{str(message.from_user.id)}`",
                                disable_web_page_preview=True, parse_mode=ParseMode.MARKDOWN)
 
 
@@ -86,10 +86,11 @@ async def channel_receive_handler(bot: Client, message: Message):
     except FloodWait as w:
         print(f"Sleeping for {str(w.x)}s")
         await asyncio.sleep(w.x)
-        await bot.send_message(chat_id=Telegram.LOG_CHANNEL,
-                               text=f"ɢᴏᴛ ғʟᴏᴏᴅᴡᴀɪᴛ ᴏғ {str(w.x)}s FROM {message.chat.title}\n\n**CHANNEL ID:** `{str(message.chat.id)}`",
+        await bot.send_message(chat_id=Telegram.ULOG_CHANNEL,
+                               text=f"ɢᴏᴛ ғʟᴏᴏᴅᴡᴀɪᴛ ᴏғ {str(w.x)}s ғʀᴏᴍ {message.chat.title}\n\n**ᴄʜᴀɴɴᴇʟ ɪᴅ :** `{str(message.chat.id)}`",
                                disable_web_page_preview=True)
     except Exception as e:
-        await bot.send_message(chat_id=Telegram.LOG_CHANNEL, text=f"**#EʀʀᴏʀTʀᴀᴄᴋᴇʙᴀᴄᴋ:** `{e}`",
+        await bot.send_message(chat_id=Telegram.ULOG_CHANNEL, text=f"**#EʀʀᴏʀTʀᴀᴄᴋᴇʙᴀᴄᴋ:** `{e}`",
                                disable_web_page_preview=True)
         print(f"Cᴀɴ'ᴛ Eᴅɪᴛ Bʀᴏᴀᴅᴄᴀsᴛ Mᴇssᴀɢᴇ!\nEʀʀᴏʀ:  **Gɪᴠᴇ ᴍᴇ ᴇᴅɪᴛ ᴘᴇʀᴍɪssɪᴏɴ ɪɴ ᴜᴘᴅᴀᴛᴇs ᴀɴᴅ ʙɪɴ Cʜᴀɴɴᴇʟ!{e}**")
+
