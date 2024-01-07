@@ -64,14 +64,13 @@ async def start(bot: Client, message: Message):
                 file_id = file_check['file_id']
                 file_name = file_check['file_name']
                 if db_id == usr_cmd:
-                    if db_id == usr_cmd:
-                        filex = await message.reply_cached_media(file_id=file_id, caption=f'**{file_name}**')
-                        await asyncio.sleep(3600)
-                        try:
-                            await filex.delete()
-                            await message.delete()
-                        except Exception:
-                            pass
+                    filex = await message.reply_cached_media(file_id=file_id, caption=f'**{file_name}**')
+                    await asyncio.sleep(3600)
+                    try:
+                        await filex.delete()
+                        await message.delete()
+                    except Exception:
+                        pass
 
             except FIleNotFound as e:
                 await message.reply_text("**File Not Found**")
