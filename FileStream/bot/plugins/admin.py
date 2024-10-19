@@ -145,7 +145,7 @@ async def sts(c: Client, m: Message):
         file_info = await db.get_file(file_id)
     except FIleNotFound:
         await m.reply_text(
-            text=f"**File Already Deleted**",
+            text=f"**ꜰɪʟᴇ ᴀʟʀᴇᴀᴅʏ ᴅᴇʟᴇᴛᴇᴅ**",
             quote=True
         )
         return
